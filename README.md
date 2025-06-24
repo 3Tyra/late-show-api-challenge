@@ -75,7 +75,6 @@ The app runs at: http://127.0.0.1:5000/
 
 Authentication Flow
 Register: POST /auth/register
-Payload example:
 
 json
 Copy
@@ -84,10 +83,11 @@ Edit
   "username": "tyra",
   "password": "Wakera2006"
 }
-Response: Confirmation message.
+Response: {
+  "message": "User registered"
+}
 
 Login: POST /auth/login
-Payload example:
 
 json
 Copy
@@ -96,10 +96,62 @@ Edit
   "username": "tyra",
   "password": "Wakera2006"
 }
-Response: JWT access token.
+Response: Response example:{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MDc0NTQ2MiwianRpIjoiYWEwMzhiYzgtZTE4Ny00MjU1LWIzNGEtZTRhOTNmZmRkZTI2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzUwNzQ1NDYyLCJjc3JmIjoiNmM3NTkwZTAtNzQyNy00YmM2LTljNjEtMmMyMzFlMmI2MmJjIiwiZXhwIjoxNzUwNzQ2MzYyfQ.bnCNKNRZpaRBisTQo_kd1NzJUiqOUbSBvE3Driwg6WE"
+}
+#NB:THIS IS AN EXAMPLE OF THE MESSAGE TOKEN NOT THE ACTUAL TOKEN!
+
+appearances:POST/auth/appearances:
+
+json
+Copy
+Edit
+{
+  "username": "tyra",
+  "password": "Wakera2006"
+}
+
+Bear Token:#Use the token that was in post/auth/login
+Response: {
+  "episode_id": 1,
+  "guest_id": 1,
+  "id": 1,
+  "rating": 4
+}
+
+guests: GET /guests
+Response: [
+  {
+    "id": 1,
+    "name": "Byron Keith",
+    "occupation": "Comedian"
+  },
+  {
+    "id": 2,
+    "name": "Tiffiny Waithera",
+    "occupation": "Musician"
+  }
+]
+
+
+episodes:GET/episodes
+Response: [
+  {
+    "date": "2025-06-01",
+    "id": 1,
+    "number": 1
+  },
+  {
+    "date": "2025-06-08",
+    "id": 2,
+    "number": 2
+  }
+]
 
 License
 MIT License
 
 GitHub Repository
 https://github.com/3Tyra/late-show-api-challenge
+
+BY Tyra Mwai.

@@ -16,8 +16,8 @@ def seed():
     db.create_all()
 
     
-    guest1 = Guest(name="John Doe", occupation="Comedian")
-    guest2 = Guest(name="Jane Smith", occupation="Musician")
+    guest1 = Guest(name="Byron Keith", occupation="Comedian")
+    guest2 = Guest(name="Tiffiny Waithera", occupation="Musician")
 
     
     episode1 = Episode(date=date(2025, 6, 1), number=1)
@@ -28,4 +28,4 @@ def seed():
 
 if __name__ == "__main__":
     seed()
-    print("Database seeded!")
+   
